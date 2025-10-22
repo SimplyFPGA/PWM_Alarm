@@ -23,11 +23,12 @@ module tb_pwm;
    );
 
    // Clock generation
-   initial clk = 0;
-   always clkgen: #(CLK_PERIOD/2) clk = ~clk;
-
+   initial clkgen: begin 
+      clk = 0;
+      forever #(CLK_PERIOD/2) clk = ~clk;
+   end
    // Stimulus
-   initial begin
+   initial Stimulus: begin
       // Initialize
       rst = 1;
       incr_duty = 0;
