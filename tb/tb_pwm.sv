@@ -21,7 +21,7 @@ module tb_pwm;
       .decr_duty(decr_duty),
       .PWM_OUT(PWM_OUT)
    );
-
+// test
    // Clock generation
    initial clkgen: begin 
       clk = 0;
